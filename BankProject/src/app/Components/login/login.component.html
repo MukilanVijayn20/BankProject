@@ -1,0 +1,48 @@
+<div class="body">
+  <div class="left">
+    <div class="img"></div>
+  </div>
+  <div class="right">
+    <div class="box">
+      <div class="bank-name">
+        <h2>Your Bank</h2>
+      </div>
+      <div class="title">
+        <h3>Login Page</h3>
+      </div>
+      <div class="form">
+        <form (ngSubmit)="login()">
+          <div class="inputs">
+            <div class="mail form_ele">
+              <input
+                type="email"
+                class="form-control"
+                [(ngModel)]="loginData.email"
+                name="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="password form_ele">
+              <input
+                [type]="pass"
+                class="form-control"
+                [(ngModel)]="loginData.password"
+                name="email"
+                placeholder="Enter password"
+              />
+              <i (click)="show()" [class]="eye"></i>
+            </div>
+          </div>
+          <div class="form_btns">
+            <div class="button form_ele">
+              <button>Continue</button>
+            </div>
+          </div>
+        </form>
+        <div class="signin">
+            <p>Don’t have an account? <a routerLink="/signup">Sign up</a></p>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

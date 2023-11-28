@@ -1,0 +1,36 @@
+<div class="nav">
+    <div class="bank-name">
+      <!-- <h2>ABC Bank</h2> -->
+      <img src="assets/Images/bank-name.png" alt="" />
+    </div>
+    <div class="list">
+      <ul>
+        <li>Home</li>
+        <li [matMenuTriggerFor]="menu">
+          Service
+          <mat-menu #menu="matMenu" class="custom-dropdown-menu-options">
+            <button mat-menu-item routerLink="/home-loan">
+              <span>Home Loan</span>
+            </button>
+            <button mat-menu-item>
+              <span>Personal Loan</span>
+            </button>
+            <button mat-menu-item>
+              <span>Education Loan</span>
+            </button>
+            <button mat-menu-item>
+              <span>Vehical Loan</span>
+            </button>
+          </mat-menu>
+        </li>
+        <li>About</li>
+        <li>Contact</li>
+        <li *ngIf="!loggedIn">
+          <button class="btn btn-success" routerLink="/login">Login</button>
+        </li>
+        <li *ngIf="loggedIn">
+          <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+        </li>
+      </ul>
+    </div>
+  </div>
