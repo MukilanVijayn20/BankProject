@@ -47,3 +47,7 @@
   height: 100%;
   width: 100%;
 }
+.nav {
+  padding: auto;
+  margin: auto;
+}
