@@ -5,13 +5,14 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { LoginComponent } from './Components/login/login.component'; 
+import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeLoanComponent } from './Components/home-loan/home-loan.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './Components/header/header.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

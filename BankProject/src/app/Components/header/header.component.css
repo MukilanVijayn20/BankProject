@@ -5,6 +5,7 @@
 /* .................nav................... */
 .nav {
   position: fixed;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   background-color: rgb(1, 132, 225);
@@ -46,8 +47,4 @@
 .nav .list ul li button {
   height: 100%;
   width: 100%;
-}
-.nav {
-  padding: auto;
-  margin: auto;
 }

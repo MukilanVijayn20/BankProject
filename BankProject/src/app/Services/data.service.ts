@@ -8,6 +8,8 @@ export class DataService {
 
     loggedIn:boolean=false;
 
+    homeloanContact:boolean=false;
+
     currentUser:User | undefined;
     
     constructor(){}

@@ -11,10 +11,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  loginData = {
-    email: '',
-    password: '',
-  };
+  // loginData = {
+  //   email: '',
+  //   password: '',
+  //   FullName:'',
+  //   age:0,
+  //   MobileNumber:0
+  // };
+  loginData: User = new User;
   pass: string = 'password';
   eye: string = 'fa fa-eye-slash';
   eye_icon: boolean = false;
@@ -54,6 +58,10 @@ export class SignupComponent implements OnInit {
 
     this.user.email = this.loginData.email;
     this.user.password = this.loginData.password;
+    this.user.fullName=this.loginData.fullName;
+    this.user.mobileNumber=this.loginData.mobileNumber;
+    this.user.age=this.loginData.age;
+    console.log(this.loginData)
     this.userservice.postUser(this.loginData).subscribe((res: any) => {
       alert('Successfully Signed In');
       console.log(this.user);

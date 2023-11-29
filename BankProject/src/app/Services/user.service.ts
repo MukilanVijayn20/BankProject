@@ -10,11 +10,11 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  postUser(data:any){
-    return this.http.post<any>("http://localhost:8080/user",data);
+  postUser(data:User){
+    return this.http.post<User>("http://localhost:8080/user",data);
   }
 
   getUser(){
-    return this.http.get<User>("http://localhost:8080/user");
+    return this.http.get<any>("http://localhost:8080/user");
   }
 }
