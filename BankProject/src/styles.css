@@ -7,16 +7,15 @@
 }
 body {
   font-family: "Raleway", sans-serif;
-  height: 100%;
 }
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* html,
+html,
 body {
-  
-} */
+  height: 100%;
+}
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;

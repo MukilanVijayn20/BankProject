@@ -16,20 +16,8 @@ public class User {
 	private String email;
 	private String password;
 	private String FullName;
-	private double MobileNumber;
+	private String MobileNumber;
 	private int age;
-	public User(String email, String password, String fullName, long mobileNumber, int age) {
-		super();
-		this.email = email;
-		this.password = password;
-		FullName = fullName;
-		MobileNumber = mobileNumber;
-		this.age = age;
-	}
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 	public int getId() {
 		return id;
 	}
@@ -54,11 +42,10 @@ public class User {
 	public void setFullName(String fullName) {
 		FullName = fullName;
 	}
-	
-	public double getMobileNumber() {
+	public String getMobileNumber() {
 		return MobileNumber;
 	}
-	public void setMobileNumber(double mobileNumber) {
+	public void setMobileNumber(String mobileNumber) {
 		MobileNumber = mobileNumber;
 	}
 	public int getAge() {
@@ -67,6 +54,23 @@ public class User {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", password=" + password + ", FullName=" + FullName + ", MobileNumber="
+				+ MobileNumber + ", age=" + age + "]";
+	}
+	public User(int id, String email, String password, String fullName, String mobileNumber, int age) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		FullName = fullName;
+		MobileNumber = mobileNumber;
+		this.age = age;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 }
