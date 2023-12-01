@@ -5,17 +5,17 @@
   <div class="content">
     <div class="list-content">
       <ul>
-        <li class="new-loan" (click)="active('new-loan')">
+        <li class="new-loan act" (click)="active('new-loan')">
           Apply for New Loan
         </li>
         <li class="status" (click)="active('status')">Status</li>
-        <li class="emi act" (click)="active('emi')">Emi Calculator</li>
+        <li class="emi " (click)="active('emi')">Emi Calculator</li>
       </ul>
     </div>
     <div class="box-content">
-      <div class="new-loan-content"></div>
+      <div class="new-loan-content active"></div>
       <div class="status-content"></div>
-      <div class="emi-content active">
+      <div class="emi-content">
         <h2>EMI Calculator</h2>
         <form (ngSubmit)="calculate()">
             <div class="form-content">

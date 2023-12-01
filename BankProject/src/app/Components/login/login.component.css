@@ -60,6 +60,9 @@
   order: 2;
   flex-grow: 0;
 }
+.right .title h3{
+  font-size: 25px;
+}
 .inputs {
   display: flex;
   justify-content: center;

@@ -15,6 +15,6 @@ export class UserService {
   }
 
   getUser(){
-    return this.http.get<any>("http://localhost:8080/user");
+    return this.http.get<User>("http://localhost:8080/user");
   }
 }

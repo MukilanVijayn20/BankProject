@@ -6,22 +6,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LoginComponent } from './Components/login/login.component';
-import { SignupComponent } from './Components/signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomeLoanComponent } from './Components/home-loan/home-loan.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { MatSliderModule } from '@angular/material/slider';
+import { FooterComponent } from './Components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    SignupComponent,
     HomeLoanComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
