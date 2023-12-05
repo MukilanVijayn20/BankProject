@@ -15,6 +15,13 @@
       <div class="form">
         <form (ngSubmit)="login()">
           <div class="inputs">
+            <div class="">
+          <label for="role">Im a  : </label>
+          <select name="role" id="role" [(ngModel)]="loginData.role" style="margin-left: 10px;">
+            <option value="user" selected>User</option>
+            <option value="admin">Admin</option>
+          </select>
+        </div>
             <div class="mail form_ele">
               <input
                 type="email"

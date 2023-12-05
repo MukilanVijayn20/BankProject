@@ -13,6 +13,7 @@ import { HomeLoanComponent } from './Components/home-loan/home-loan.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FooterComponent } from './Components/footer/footer.component';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FooterComponent } from './Components/footer/footer.component';
     HomeLoanComponent,
     HeaderComponent,
     FooterComponent,
+    AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
