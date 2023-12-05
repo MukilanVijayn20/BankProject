@@ -13,7 +13,51 @@
       </ul>
     </div>
     <div class="box-content">
-      <div class="new-loan-content active"></div>
+      <div class="new-loan-content active">
+        <form >
+          <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" formControlName="firstName" />
+          </div>
+        
+          <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" formControlName="lastName" />
+          </div>
+        
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number:</label>
+            <input type="text" id="mobileNumber" formControlName="mobileNumber" />
+          </div>
+        
+          <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" formControlName="dob" />
+          </div>
+        
+          <div class="form-group">
+            <label for="panNumber">PAN Card Number:</label>
+            <input type="text" id="panNumber" formControlName="panNumber" />
+          </div>
+        
+          <div class="form-group">
+            <label for="city">City:</label>
+            <input type="text" id="city" formControlName="city" />
+          </div>
+        
+          <div class="form-group">
+            <label for="pinCode">Pin Code:</label>
+            <input type="text" id="pinCode" formControlName="pinCode" />
+          </div>
+        
+          <div class="form-group">
+            <label for="email">Email (optional):</label>
+            <input type="email" id="email" formControlName="email" />
+          </div>
+        
+          <button type="submit" >Submit</button>
+        </form>
+      </div>
       <div class="status-content"></div>
       <div class="emi-content">
         <h2>EMI Calculator</h2>
@@ -59,5 +103,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
   </div>
 </div>
