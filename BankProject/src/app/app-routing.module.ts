@@ -4,6 +4,10 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { LoginComponent } from './Components/login/login.component'; 
 import { HomeLoanComponent } from './Components/home-loan/home-loan.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { ApplyNewLoanComponent } from './Components/apply-new-loan/apply-new-loan.component';
+import { ContactComponent } from './Components/contact/contact.component';
+import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -11,6 +15,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home-loan', component: HomeLoanComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'apply-newloan', component: ApplyNewLoanComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'learn-more', component: LearnMoreComponent },
 ];
 
 @NgModule({

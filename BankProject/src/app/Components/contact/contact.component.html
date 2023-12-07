@@ -1,0 +1,116 @@
+<body>
+  <div>
+    <app-header></app-header>
+  </div>
+  <div class="section contact">
+    <div class="container">
+      <h1 class="title">
+        <span class="contact-header">Contact</span>
+      </h1>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="contact-info-card">
+            <h4 class="contact-title">Get in contact</h4>
+            <div class="row">
+              <div class="col-10">
+                <h4 class="d-inline">
+                  Phone : <br />
+                  <span class="text-muted">+ 01 234 567 88 </span>
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <h4 class="d-inline">
+                  Address :<br />
+                  <span class="text-muted">New York, NY 10012, US </span>
+                </h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-10">
+                <h4 class="d-inline">
+                  Email :<br />
+                  <span class="text-muted">info@gmail.com </span>
+                </h4>
+              </div>
+            </div>
+            <ul class="social-icons">
+              <li>
+                <a class="social-link text-inf"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a class="social-link text-inf" 
+                  ><i class="fa fa-linkedin"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  class="social-link text-inf"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a class="social-link text-inf" 
+                  ><i class="fa fa-github"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="contact-form-card">
+            <h4 class="contact-title">Send a Query</h4>
+            <form [formGroup]="modelForm">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Name *"
+                  name="name"
+                  formControlName="name"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="Email *"
+                  name="email"
+                  formControlName="email"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control resize"
+                  placeholder="Queries *"
+                  rows="7"
+                  name="queries"
+                  formControlName="queries"
+                  autocomplete="off"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  (click)="Submitform()"
+                  class="form-sub btn btn-info"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center footer">Copyrights © 2023-All rights reserved</div>
+</body>

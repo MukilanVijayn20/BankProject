@@ -14,6 +14,12 @@ import { HeaderComponent } from './Components/header/header.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { FooterComponent } from './Components/footer/footer.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
+import { ApplyNewLoanComponent } from './Components/apply-new-loan/apply-new-loan.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ContactComponent } from './Components/contact/contact.component';
+import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +30,10 @@ import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dash
     HeaderComponent,
     FooterComponent,
     AdminDashboardComponent,
+    AboutUsComponent,
+    ApplyNewLoanComponent,
+    ContactComponent,
+    LearnMoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +44,7 @@ import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dash
     BrowserAnimationsModule,
     MatMenuModule,
     MatSliderModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

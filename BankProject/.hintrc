@@ -18,6 +18,26 @@
         "link-name": "off"
       }
     ],
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
+      }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "min-height: auto"
+        ]
+      }
+    ],
+    "axe/parsing": [
+      "default",
+      {
+        "marquee": "off"
+      }
+    ]
   }
 }

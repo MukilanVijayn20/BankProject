@@ -1,0 +1,86 @@
+<form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" formControlName="firstName" />
+      <div *ngIf="loanForm.get('firstName')?.invalid && loanForm.get('firstName')?.touched">
+        <span *ngIf="loanForm.get('firstName')?.hasError('required')">First Name is required.</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" formControlName="lastName" />
+      <div *ngIf="loanForm.get('lastName')?.invalid && loanForm.get('lastName')?.touched">
+        <span *ngIf="loanForm.get('lastName')?.hasError('required')">Last Name is required.</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="mobile">Mobile Number:</label>
+      <input type="text" id="mobile" formControlName="mobile" />
+      <div *ngIf="loanForm.get('mobile')?.invalid && loanForm.get('mobile')?.touched">
+        <span *ngIf="loanForm.get('mobile')?.hasError('required')">Mobile Number is required.</span>
+        <span *ngIf="loanForm.get('mobile')?.hasError('pattern')">Invalid mobile number.</span>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select id="gender" formControlName="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="dateOfBirth">Date of Birth:</label>
+      <input type="date" id="dateOfBirth" formControlName="dateOfBirth" />
+      <div *ngIf="loanForm.get('dateOfBirth')?.invalid && loanForm.get('dateOfBirth')?.touched">
+        <span *ngIf="loanForm.get('dateOfBirth')?.hasError('required')">Date of Birth is required.</span>
+      </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="pancard">PAN Card Number:</label>
+        <input type="text" id="pancard" formControlName="pancard" />
+      </div>
+    
+     
+    
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" />
+      </div>
+      
+    
+      <div class="form-group">
+        <label for="loanAmount">Loan Amount:</label>
+        <input type="number" id="loanAmount" formControlName="loanAmount" />
+      </div>
+    
+      <div class="form-group">
+        <label for="loanTenure">Tenure (months):</label>
+        <input type="number" id="loanTenure" formControlName="loanTenure" />
+      </div>
+    
+      <div class="form-group">
+        <label for="employmentType">Employment Type:</label>
+        <select id="employmentType" formControlName="employmentType">
+          <option value="salaried">Salaried</option>
+          <option value="selfEmployed">Self Employed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" id="city" formControlName="city" />
+      </div>
+    
+      <div class="form-group">
+        <label for="pincode">Pin Code:</label>
+        <input type="text" id="pincode" formControlName="pincode" />
+      </div>
+    
+      <!-- <button type="submit">Submit</button> -->
+      <button type="submit" [disabled]="loanForm.invalid">Submit</button>
+    </form>

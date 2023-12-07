@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoanService } from 'src/app/Services/loan.service';
 
 @Component({
   selector: 'app-home-loan',
@@ -15,9 +16,16 @@ export class HomeLoanComponent implements OnInit {
   a: string = '';
   b: string = '';
   c: string = '';
-  constructor() {}
+  loanApplication:any;
 
-  ngOnInit() {}
+  constructor(private loanService:LoanService) {}
+
+  ngOnInit() {
+    this.loanService.getLoan().subscribe((res:any)=>{
+      this.loanApplication=res;
+      console.log(res)
+    })
+  }
 
   calculate() {
     this.showResult = true;

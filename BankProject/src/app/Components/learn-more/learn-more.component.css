@@ -1,0 +1,153 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    height: 80px;
+}
+
+.body
+{
+    background-attachment: fixed;
+    background-image:  linear-gradient(rgba(252, 248, 248, 0.699), rgba(232, 224, 224, 0.694)), url('/assets/Images/home-page7.jpg');
+
+   background-size: cover;
+   
+}
+
+
+
+  
+  .benefits {
+    margin-bottom: 50px;
+    text-align: left;
+    margin-left: 20px;
+    
+  }
+  
+  
+  .benefits h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    
+  }
+  
+  
+  .benefits ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .benefits li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust styling as needed */
+/* Existing styles remain unchanged */
+.faq {
+
+    margin-bottom: 50px;
+    text-align: left;
+      margin-left: 20px;
+      margin-bottom: 100px;    
+}
+
+
+
+
+
+.faq h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+
+.faq-item h4,
+.faq-item p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.faq-item h4 {
+  margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px; /* Add some padding to align content properly */
+  }
+  
+  /* Add custom bullet point styles */
+  ul li:before {
+    content: "\2022"; /* Unicode for a bullet point */
+    color: goldenrod; /* Custom bullet color */
+    font-weight: bold; /* Make it bold if desired */
+    display: inline-block;
+    width: 2em;
+    margin-left: 20px; /* Adjust the position */
+  }
+  
+/* Our Loan Offerings Loan Application Process  Loan Requirements */
+
+  .banner-image
+{
+  height: 250px;
+
+}
+h2{
+  text-align: center;
+}
+  .features {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .feature-item {
+    flex: 1;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .feature-item h3 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .feature-item p {
+    color: #555;
+  }
+  
+  
+  .features-section
+  {
+    margin-top: 50px;
+  }
+  
+  .features-section h2
+   {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  .features{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .feature-item,
+  
+   p {
+    flex: 1;
+    padding: 20px;
+    margin: 0 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+  }

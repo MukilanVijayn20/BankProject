@@ -25,7 +25,7 @@ public class BankProjectApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		LocalDate date=LocalDate.of(2001, 07, 16);
 		LoanApplication application=new LoanApplication("arul", "kumaran", "male", date, "9156324887", "ABC7890T", "kumaranarul080@gmail.com", "chennai", 600001, 500000, 2, 30000, "pending");
-		applicationService.saveLoanApllication(application);
+//		applicationService.saveLoanApllication(application);
 	}
 
 }
