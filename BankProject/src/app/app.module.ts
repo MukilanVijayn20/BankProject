@@ -19,6 +19,7 @@ import { ApplyNewLoanComponent } from './Components/apply-new-loan/apply-new-loa
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ContactComponent } from './Components/contact/contact.component';
 import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
+import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { LearnMoreComponent } from './Components/learn-more/learn-more.component
     ApplyNewLoanComponent,
     ContactComponent,
     LearnMoreComponent,
+    PersonalLoanComponent,
   ],
   imports: [
     BrowserModule,

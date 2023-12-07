@@ -1,0 +1,134 @@
+<div class="body">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="content">
+      <div class="list-content">
+        <ul>
+          <li class="new-loan act" (click)="active('new-loan')">
+            Apply for New Loan
+          </li>
+          <li class="status" (click)="active('status')">Status</li>
+          <li class="emi" (click)="active('emi')">Emi Calculator</li>
+        </ul>
+      </div>
+      <div class="box-content">
+        <div class="new-loan-content active">
+          <app-apply-new-loan></app-apply-new-loan>
+        </div>
+        <div class="status-content">
+          <table class="table container table-hover">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Pancard</th>
+                <th scope="col">Loan Amount</th>
+                <th scope="col">Loan Tenure</th>
+                <th scope="col">Loan status</th>
+              </tr>
+            </thead>
+            <tbody class="table-data">
+              <tr *ngFor="let app of loanApplication">
+                <td>{{ app.firstName }}</td>
+                <td>{{ app.lastName }}</td>
+                <td>{{ app.mobile }}</td>
+                <td>{{ app.pancard }}</td>
+                <td>{{ app.loanAmount }}</td>
+                <td>{{ app.loanTenure }}</td>
+                <td *ngIf="app.loanStatus == 'approved'" style="color: green">
+                  {{ app.loanStatus }}
+                </td>
+                <td *ngIf="app.loanStatus == 'rejected'" style="color: red">
+                  {{ app.loanStatus }}
+                </td>
+                <td
+                  *ngIf="app.loanStatus == 'pending'"
+                  style="color: rgb(76, 43, 226)"
+                >
+                  {{ app.loanStatus }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="emi-content">
+          <h2>EMI Calculator</h2>
+          <form (ngSubmit)="calculate()">
+            <div class="form-content">
+              <div class="amount">
+                <div class="amount-inputs">
+                  <p>Enter Amount</p>
+                  <input type="number" [(ngModel)]="p" name="amount" id="" />
+                </div>
+                <mat-slider min="100000" max="100000000" step="1">
+                  <input
+                    matSliderThumb
+                    [(ngModel)]="p"
+                    name="slide-amount"
+                    #slider
+                  />
+                </mat-slider>
+              </div>
+              <div class="year">
+                <div class="year-inputs">
+                  <p>Enter No. of Years</p>
+                  <input type="number" [(ngModel)]="n" name="year" id="" />
+                </div>
+                <mat-slider min="2" max="20" step="1">
+                  <input
+                    matSliderThumb
+                    [(ngModel)]="n"
+                    name="slide-year"
+                    #slider
+                  />
+                </mat-slider>
+              </div>
+              <div class="intrest">
+                <div class="intrest-inputs">
+                  <p>Enter Intrest Rate</p>
+                  <input type="number" [(ngModel)]="r" name="intrest" id="" />
+                </div>
+                <mat-slider min="5" max="15" step=".01">
+                  <input
+                    matSliderThumb
+                    [(ngModel)]="r"
+                    name="slide-intrest"
+                    #slider
+                  />
+                </mat-slider>
+              </div>
+            </div>
+            <div class="submit">
+              <button class="btn btn-primary" *ngIf="!showResult">
+                Calculate
+              </button>
+              <button
+                class="btn btn-primary"
+                *ngIf="showResult"
+                (click)="reset()"
+              >
+                Reset
+              </button>
+            </div>
+          </form>
+          <div class="result" *ngIf="showResult">
+            <h3>
+              Your Monthly EMI will be <span>₹{{ a }}</span> per month
+            </h3>
+            <h3>
+              Total Interest is <span>₹{{ b }}</span>
+            </h3>
+            <h3>
+              Total Payable amount <span>₹{{ c }}</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <app-footer></app-footer>
+    </div>
+  </div>
+  

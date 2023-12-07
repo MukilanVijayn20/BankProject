@@ -17,4 +17,4 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowCredentials(true)
                 .maxAge(3600); // Specify the maximum age of the CORS preflight request
     }
-}
+}	

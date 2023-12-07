@@ -1,0 +1,185 @@
+.body {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    height: 80px;
+  }
+  
+  /* ................content.................. */
+  .content {
+    margin-top: 20px;
+  }
+  
+  .content .list-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content .list-content ul {
+    display: flex;
+    list-style: none;
+  
+    background-color: #0184e1;
+    padding: 5px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  
+  .content .list-content ul li {
+    font-size: 15px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+  }
+  
+  .content .list-content ul .act {
+    background-color: white;
+    border-radius: 50px;
+    color: black;
+  }
+  
+  /* .............box-content.......... */
+  
+  .new-loan-content {
+    /* background-color: #ff0000; */
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+  }
+  .status-content {
+    /* background-color: #04ff00; */
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  .emi-content {
+    /* background-color: #2b00ff; */
+    height: 0;
+    width: 0;
+    padding: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+  }
+  
+  .emi-content h2 {
+    font-size: 35px;
+    font-weight: 200;
+    margin-bottom: 40px;
+  }
+  
+  .amount-inputs,
+  .year-inputs,
+  .intrest-inputs {
+    display: flex;
+    gap: 15px;
+    height: 40px;
+    align-items: center;
+  }
+  
+  .amount-inputs p,
+  .year-inputs p,
+  .intrest-inputs p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .amount-inputs input {
+    width: 90px;
+    height: 40px;
+  }
+  
+  .year-inputs input {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .intrest-inputs input {
+    width: 60px;
+    height: 40px;
+  }
+  
+  .emi-content form .mat-mdc-slider {
+    width: 180px;
+  }
+  
+  .emi-content form input[type="number"],
+  select {
+    /* width: 100px; */
+    padding: 0px 0px 0px 10px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    /* border: none; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .emi-content form input[type="number"]::-webkit-inner-spin-button,
+  .emi-content form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+  
+  button {
+    background-color: #3f51b5;
+  }
+  button:hover {
+    background-color: #28357c;
+  }
+  
+  .emi-content .submit {
+    display: flex;
+    /* justify-content: end; */
+    margin-top: 20px;
+  }
+  
+  .form-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .result {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .result h3 {
+    font-size: 20px;
+  }
+  
+  .result h3 span {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  
+  .active {
+    /* width: 0; */
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+  
+  /* ....................status............ */
+  
+  .table-data {
+    text-transform: capitalize;
+  }
+  
