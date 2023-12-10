@@ -1,0 +1,52 @@
+/* loan-form.component.css */
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="number"],input[type="text"],
+  select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+
+  .header 
+  {
+    height: 80px;
+  }
+  .body
+  {
+    background-attachment: fixed;
+    background-image:  linear-gradient(rgba(252, 248, 248, 0.699), rgba(232, 224, 224, 0.694)), url('/assets/Images/home-page6.jpg');
+  
+   background-size: cover;
+   height: 100%;
+   width: 100%;
+  }

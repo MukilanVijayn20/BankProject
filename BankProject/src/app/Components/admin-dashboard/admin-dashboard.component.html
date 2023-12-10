@@ -1,1 +1,37 @@
-<p>admin-dashboard works!</p>
+<body>
+  <br />
+  <br />
+
+  <h1>WELCOME Admin</h1>
+
+  <h2 class="fw-bolder">Loan Requests</h2>
+  <table class="table table-striped container">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Pancard</th>
+        <th scope="col">Loan Amount</th>
+        <th scope="col">Loan Tenure</th>
+        <th scope="col">Monthly Income</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody class="table-data">
+      <tr *ngFor="let loan of loanRequests">
+        <td>{{loan.firstName}}</td>
+        <td>{{loan.lastName}}</td>
+        <td>{{loan.gender}}</td>
+        <td>{{loan.pancard}}</td>
+        <td>{{loan.loanAmount}}</td>
+        <td>{{loan.loanTenure}}</td>
+        <td>{{loan.monthlyIncome}}</td>
+        <td>
+          <button class="btn btn-success" style="margin-right: 20px;" (click)="aprove(loan.id)">Approve</button>
+          <button class="btn btn-danger" (click)="reject(loan.id)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>

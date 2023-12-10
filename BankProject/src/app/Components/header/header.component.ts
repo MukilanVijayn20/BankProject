@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/Services/data.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   loggedIn: boolean = false;
-  constructor(private data: DataService, private router: Router) {}
+  constructor(private data: DataService, private router: Router,private snackBar:MatSnackBar) {}
 
   ngOnInit() {
     this.loggedIn = this.data.loggedIn;
@@ -19,8 +20,14 @@ export class HeaderComponent implements OnInit {
     this.data.currentUser = undefined;
     this.data.loggedIn = false;
     console.log('logout success');
-    alert('logged Out Successfully');
+    this.snackBar.open('Logged out Successfully', 'Close', {
+      duration: 3000, // Duration in milliseconds
+      horizontalPosition: 'center', // Positioning
+      verticalPosition: 'top',
+    });
     this.ngOnInit();
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
   }
+
+  
 }

@@ -12,6 +12,9 @@ export class DashboardComponent implements OnInit {
   constructor(private data: DataService,private router:Router) {}
 
   ngOnInit() {
+    if(!this.data.loggedIn){
+      this.router.navigate(['']);
+    }
     this.loggedIn = this.data.loggedIn;
   }
 

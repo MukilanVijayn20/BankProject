@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { DataService } from 'src/app/Services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -10,9 +12,12 @@ import { HttpClient } from '@angular/common/http';
 export class ContactComponent {
   modelForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {}
+  constructor(private fb: FormBuilder, private http: HttpClient,private data:DataService,private router:Router) {}
 
   ngOnInit() {
+    if(!this.data.loggedIn){
+      this.router.navigate(['']);
+    }
     this.modelForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/Services/data.service';
 import { LoanService } from 'src/app/Services/loan.service';
 
 @Component({
   selector: 'app-personal-loan',
   templateUrl: './personal-loan.component.html',
-  styleUrls: ['./personal-loan.component.css']
+  styleUrls: ['./personal-loan.component.css'],
 })
 export class PersonalLoanComponent implements OnInit {
   p: number = 500000;
@@ -16,15 +18,22 @@ export class PersonalLoanComponent implements OnInit {
   a: string = '';
   b: string = '';
   c: string = '';
-  loanApplication:any;
+  loanApplication: any;
 
-  constructor(private loanService:LoanService) {}
+  constructor(
+    private loanService: LoanService,
+    private data: DataService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.loanService.getLoan().subscribe((res:any)=>{
-      this.loanApplication=res;
-      console.log(res)
-    })
+    if (!this.data.loggedIn) {
+      this.router.navigate(['']);
+    }
+    this.loanService.getLoan().subscribe((res: any) => {
+      this.loanApplication = res;
+      console.log(res);
+    });
   }
 
   calculate() {
@@ -54,15 +63,17 @@ export class PersonalLoanComponent implements OnInit {
   }
 
   active(name: string) {
-    const a = document.querySelector('.act');
-    const b = document.querySelector('.active');
-    if (a) {
-      a.classList.remove('act');
-    }
-    if (b) {
-      b.classList.remove('active');
-    }
+    const a = document.querySelector('.act') as HTMLElement;
+    const b = document.querySelector('.active') as HTMLElement;
+    a.classList.remove('act');
+    b.classList.remove('active');
+    this.sample(a,b);
     document.querySelector('.' + name)?.classList.add('act');
     document.querySelector('.' + name + '-content')?.classList.add('active');
+  }
+
+  sample(a:any,b:any){
+    a.classList.remove('act');
+    b.classList.remove('active');
   }
 }

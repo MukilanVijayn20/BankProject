@@ -4,8 +4,8 @@
     </div>
     <div class="list">
       <ul>
-        <li routerLink="/home">Home</li>
-        <li [matMenuTriggerFor]="menu">
+        <li routerLink="/home" class="home active">Home</li>
+        <li [matMenuTriggerFor]="menu" class="service">
           Service
           <mat-menu #menu="matMenu" class="custom-dropdown-menu-options">
             <button mat-menu-item routerLink="/home-loan">
@@ -22,8 +22,8 @@
             </button>
           </mat-menu>
         </li>
-        <li routerLink="/about-us">About</li>
-        <li routerLink="/contact">Contact</li>
+        <li routerLink="/about-us" class="about">About</li>
+        <li routerLink="/contact" class="contact">Contact</li>
         <li *ngIf="!loggedIn">
           <button class="btn btn-success" routerLink="/login">Login</button>
         </li>

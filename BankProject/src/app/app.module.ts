@@ -20,7 +20,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ContactComponent } from './Components/contact/contact.component';
 import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
 import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.component';
-
+import { CheckEligibilityComponent } from './Components/check-eligibility/check-eligibility.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.
     ContactComponent,
     LearnMoreComponent,
     PersonalLoanComponent,
+    CheckEligibilityComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,10 @@ import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.
     BrowserAnimationsModule,
     MatMenuModule,
     MatSliderModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

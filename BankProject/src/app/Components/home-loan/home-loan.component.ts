@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from 'src/app/Services/data.service';
 
 @Component({
   selector: 'app-home-loan',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-loan.component.css'],
 })
 export class HomeLoanComponent implements OnInit {
-  constructor() {}
+  constructor(private data:DataService,private router:Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    if(!this.data.loggedIn){
+      this.router.navigate(['']);
+    }
+  }
 }

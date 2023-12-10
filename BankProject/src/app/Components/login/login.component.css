@@ -1,3 +1,65 @@
+/* mat-card {
+  max-width: 600px;
+  margin: 2em auto;
+  text-align: center;
+  max-height: 600px;
+}
+
+.header {
+  text-align: center;
+}
+.full-width {
+  width: 80%;
+}
+
+.button-row {
+  padding-top: 5px;
+}
+
+.button-row a {
+  margin-right: 8px;
+  text-align: center;
+}
+
+.forget-password {
+  padding-left: 0px;
+}
+
+.emailInput {
+  padding-top: 10px;
+}
+
+.contentBody {
+  padding: 60px 1rem;
+  background: rgb(10, 89, 146);
+  display: block;
+}
+
+.aLink {
+  float: right;
+  padding-right: 60px;
+  text-decoration: none;
+}
+
+.big {
+  font-family: "Lucida Console", "Courier New", monospace;
+  color: rgb(15, 78, 196);
+  background-image: url("/assets/Images/aruba-itinerary-12.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.small {
+  text-decoration-line: wavy;
+  color: rgb(12, 101, 152);
+} */
+
+
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Passion+One&family=Vina+Sans&display=swap");
 
 .body {
@@ -211,3 +273,5 @@ button {
   text-decoration: none;
   color: #1d90d7;
 }
+
+

@@ -9,6 +9,7 @@ import { ApplyNewLoanComponent } from './Components/apply-new-loan/apply-new-loa
 import { ContactComponent } from './Components/contact/contact.component';
 import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
 import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.component';
+import { CheckEligibilityComponent } from './Components/check-eligibility/check-eligibility.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'learn-more', component: LearnMoreComponent },
   { path: 'personal-loan', component: PersonalLoanComponent },
+  { path: 'check-eligibility', component: CheckEligibilityComponent },
 ];
 
 @NgModule({

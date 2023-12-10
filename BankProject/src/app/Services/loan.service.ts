@@ -16,4 +16,11 @@ export class LoanService {
   getLoan() {
     return this.http.get<any>('http://localhost:8080/loan-app/allLoan');
   }
+
+  aproved(id:number,data:any){
+    return this.http.put<any>('http://localhost:8080/loan-app/approved/'+id,data);
+  }
+  rejected(id:number,data:any){
+    return this.http.put<any>('http://localhost:8080/loan-app/rejected/'+id,data);
+  }
 }
