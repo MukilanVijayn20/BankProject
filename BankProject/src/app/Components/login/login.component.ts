@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { DataService } from 'src/app/Services/data.service';
 import { AdminService } from 'src/app/Services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit{
   eye_icon: boolean = false;
   user:User | undefined;
 
-  constructor(private userService:UserService,private adminService:AdminService,private router:Router,private data:DataService,private snackBar:MatSnackBar){}
+  constructor(private userService:UserService,private adminService:AdminService,private router:Router,private data:DataService,private snackBar:MatSnackBar,private fb: FormBuilder){}
 
   ngOnInit() {}
 
@@ -41,6 +42,12 @@ export class LoginComponent implements OnInit{
       this.eye_icon = !this.eye_icon;
     }
   }
+
+  loginForm: FormGroup = this.fb.group({
+
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+  })
 
   login() {
     if(this.loginData.role==''||this.loginData.email==null){
