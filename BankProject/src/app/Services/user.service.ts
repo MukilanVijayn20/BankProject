@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { User } from '../Models/user.model';
 import { LoanEligibility } from '../Models/loanEligibility.model';
+import { personalLoan } from '../Models/personalLoan.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,13 @@ export class UserService {
   
   posteligibility(data:string){
     return this.http.get<LoanEligibility>("http://localhost:8080/eligibility/"+data);
+  }
+
+  addLoanByUser(data:personalLoan,id:number){
+    return this.http.post<any>("http://localhost:8080/addLoan/"+id,data);
+  }
+
+  getUserById(id:number){
+    return this.http.get<User>("http://localhost:8080/user/id/"+id);
   }
 }

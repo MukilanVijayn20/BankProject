@@ -24,8 +24,7 @@ public class LoanApplication {
 	@GeneratedValue(generator = "app_gen",strategy = GenerationType.AUTO)
 	@SequenceGenerator(name="app_gen", sequenceName = "app_seq",initialValue = 1001,allocationSize = 1)
 	private int id;
-	private String firstName;
-	private String lastName;
+	private String fullName;
 	private String gender;
 	private LocalDate dateOfBirth;
 	private String mobile;
@@ -45,17 +44,12 @@ public class LoanApplication {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getFirstName() {
-		return firstName;
+	
+	public String getFullName() {
+		return fullName;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getGender() {
 		return gender;
@@ -123,19 +117,11 @@ public class LoanApplication {
 	public void setLoanStatus(String loanStatus) {
 		this.loanStatus = loanStatus;
 	}
-	@Override
-	public String toString() {
-		return "LoanApplication [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender="
-				+ gender + ", dateOfBirth=" + dateOfBirth + ", mobile=" + mobile + ", pancard=" + pancard + ", email="
-				+ email + ", city=" + city + ", pincode=" + pincode + ", loanAmount=" + loanAmount + ", loanTenure="
-				+ loanTenure + ", monthlyIncome=" + monthlyIncome + ", loanStatus=" + loanStatus + "]";
-	}
-	public LoanApplication(String firstName, String lastName, String gender, LocalDate dateOfBirth, String mobile,
-			String pancard, String email, String city, int pincode, double loanAmount, double loanTenure,
-			double monthlyIncome, String loanStatus) {
+	public LoanApplication(String fullName, String gender, LocalDate dateOfBirth, String mobile, String pancard,
+			String email, String city, int pincode, double loanAmount, double loanTenure, double monthlyIncome,
+			String loanStatus) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
+		this.fullName = fullName;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.mobile = mobile;
@@ -152,6 +138,12 @@ public class LoanApplication {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
+	@Override
+	public String toString() {
+		return "LoanApplication [id=" + id + ", fullName=" + fullName + ", gender=" + gender + ", dateOfBirth="
+				+ dateOfBirth + ", mobile=" + mobile + ", pancard=" + pancard + ", email=" + email + ", city=" + city
+				+ ", pincode=" + pincode + ", loanAmount=" + loanAmount + ", loanTenure=" + loanTenure
+				+ ", monthlyIncome=" + monthlyIncome + ", loanStatus=" + loanStatus + "]";
+	}
 	
 }

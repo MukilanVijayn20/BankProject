@@ -8,8 +8,7 @@
   <table class="table table-striped container">
     <thead>
       <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
+        <th scope="col">Name</th>
         <th scope="col">Gender</th>
         <th scope="col">Pancard</th>
         <th scope="col">Loan Amount</th>
@@ -20,8 +19,7 @@
     </thead>
     <tbody class="table-data">
       <tr *ngFor="let loan of loanRequests">
-        <td>{{loan.firstName}}</td>
-        <td>{{loan.lastName}}</td>
+        <td>{{loan.fullName}}</td>
         <td>{{loan.gender}}</td>
         <td>{{loan.pancard}}</td>
         <td>{{loan.loanAmount}}</td>

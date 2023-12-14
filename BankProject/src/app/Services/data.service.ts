@@ -1,16 +1,22 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Models/user.model';
+import { Employee } from '../Models/employee.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
+  loggedIn: boolean = false;
 
-    loggedIn:boolean=false;
+  userLogin: boolean = false;
 
-    homeloanContact:boolean=false;
+  employeeLogin: boolean = false;
 
-    currentUser:User | undefined;
-    
-    constructor(){}
+  homeloanContact: boolean = false;
+
+  currentUser: User | null = null;
+
+  currentEmployee!: Employee;
+
+  constructor() {}
 }

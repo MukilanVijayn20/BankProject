@@ -1,66 +1,4 @@
-/* mat-card {
-  max-width: 600px;
-  margin: 2em auto;
-  text-align: center;
-  max-height: 600px;
-}
-
-.header {
-  text-align: center;
-}
-.full-width {
-  width: 80%;
-}
-
-.button-row {
-  padding-top: 5px;
-}
-
-.button-row a {
-  margin-right: 8px;
-  text-align: center;
-}
-
-.forget-password {
-  padding-left: 0px;
-}
-
-.emailInput {
-  padding-top: 10px;
-}
-
-.contentBody {
-  padding: 60px 1rem;
-  background: rgb(10, 89, 146);
-  display: block;
-}
-
-.aLink {
-  float: right;
-  padding-right: 60px;
-  text-decoration: none;
-}
-
-.big {
-  font-family: "Lucida Console", "Courier New", monospace;
-  color: rgb(15, 78, 196);
-  background-image: url("/assets/Images/aruba-itinerary-12.jpg");
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-}
-
-.small {
-  text-decoration-line: wavy;
-  color: rgb(12, 101, 152);
-} */
-
-
-
-
-
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Passion+One&family=Vina+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@700&display=swap');
 
 .body {
   width: 100vw;
@@ -68,7 +6,8 @@
   display: flex;
 }
 
-/* ..............left............ */
+
+/* ...........left........ */
 .left {
   width: 55%;
   display: flex;
@@ -83,8 +22,7 @@
   background-position: center;
 }
 
-/* ...................right................... */
-
+/* ...........right............ */
 .right {
   width: 45%;
   display: flex;
@@ -92,10 +30,10 @@
   align-items: center;
 }
 .right .box {
-  padding: 60px 20px 100px 20px;
-  /* border: 1px solid black; */
+  padding: 50px 20px 60px 20px;
   border-radius: 50px;
   box-shadow: 0px 0px 20px black;
+  width: 400px;
 }
 .right .bank-name {
   font-family: "Open Sans", sans-serif;
@@ -125,153 +63,20 @@
 .right .title h3{
   font-size: 25px;
 }
-.inputs {
+
+/* ...........forms.......... */
+
+
+#root {
+  padding: 30px;
+}
+
+.register-form {
+  max-width: 350px;
+  margin: auto;
+}
+form{
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  row-gap: 20px;
-  align-items: center;
-  margin-top: 40px;
+  gap: 20px;
 }
-/* form {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      row-gap: 20px;
-      align-items: center;
-      margin-top: 40px;
-    } */
-form input::placeholder {
-  width: 362px;
-  height: 16px;
-  font-family: "Plus Jakarta Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 130%;
-  color: #a5b0bd;
-}
-.password i {
-  color: #a5b0bd;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.password {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.form_btns {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-}
-.forgot {
-  display: flex;
-  justify-content: end;
-  margin-top: 4px;
-  margin-bottom: 16px;
-}
-.form {
-  max-width: 385px;
-  min-width: auto;
-}
-form p {
-  /* width: 106px; */
-  height: 16px;
-  font-family: "Plus Jakarta Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 130%;
-  color: #1d90d7;
-  cursor: pointer;
-}
-
-.button button {
-  width: 100%;
-  height: 100%;
-  font-family: "Plus Jakarta Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  /* line-height: 130%; */
-  border-radius: 4px;
-  color: #f9fafa;
-  background-color: #aed9f4;
-  transition: 0.5s;
-}
-.button button:hover {
-  background-color: #1d90d7;
-}
-.form_ele input {
-  width: 100%;
-  height: 100%;
-}
-.form_ele {
-  border: 1px solid #eaeaeb;
-  width: 384px;
-  height: 40px;
-  border-radius: 4px;
-}
-.terms {
-  width: 384px;
-  height: 38px;
-  font-family: "Plus Jakarta Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 160%;
-  text-align: center;
-  color: #717c88;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-  margin-top: 20px;
-}
-.terms span {
-  color: #1d90d7;
-  cursor: pointer;
-}
-input:focus {
-  border: none;
-  outline: none;
-  font-family: "Plus Jakarta Sans";
-  color: #6a727a;
-}
-.form input,
-button {
-  border: none;
-  padding: 8px;
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
-  /* padding: 5px; */
-}
-.signin p {
-  width: 384px;
-  height: 19px;
-  font-family: "Plus Jakarta Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 160%;
-  text-align: center;
-  color: #717c88;
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-}
-.signin {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-.signin a {
-  text-decoration: none;
-  color: #1d90d7;
-}
-
-

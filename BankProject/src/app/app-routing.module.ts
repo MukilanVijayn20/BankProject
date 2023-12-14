@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { LoginComponent } from './Components/login/login.component'; 
+
+import { LoginComponent } from './Components/login/login.component';
 import { HomeLoanComponent } from './Components/home-loan/home-loan.component';
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
@@ -10,6 +10,8 @@ import { ContactComponent } from './Components/contact/contact.component';
 import { LearnMoreComponent } from './Components/learn-more/learn-more.component';
 import { PersonalLoanComponent } from './Components/personal-loan/personal-loan.component';
 import { CheckEligibilityComponent } from './Components/check-eligibility/check-eligibility.component';
+import { SignupComponent } from './Components/signup/signup.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
   { path: 'learn-more', component: LearnMoreComponent },
   { path: 'personal-loan', component: PersonalLoanComponent },
   { path: 'check-eligibility', component: CheckEligibilityComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({

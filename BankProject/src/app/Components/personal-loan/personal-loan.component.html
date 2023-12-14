@@ -17,11 +17,10 @@
           <app-apply-new-loan></app-apply-new-loan>
         </div>
         <div class="status-content">
-          <table class="table container table-hover">
+          <table *ngIf="empLogin" class="table container table-hover">
             <thead>
               <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
+                <th scope="col">Name emp</th>
                 <th scope="col">Mobile Number</th>
                 <th scope="col">Pancard</th>
                 <th scope="col">Loan Amount</th>
@@ -31,8 +30,40 @@
             </thead>
             <tbody class="table-data">
               <tr *ngFor="let app of loanApplication">
-                <td>{{ app.firstName }}</td>
-                <td>{{ app.lastName }}</td>
+                <td>{{ app.fullName }}</td>
+                <td>{{ app.mobile }}</td>
+                <td>{{ app.pancard }}</td>
+                <td>{{ app.loanAmount }}</td>
+                <td>{{ app.loanTenure }}</td>
+                <td *ngIf="app.loanStatus == 'approved'" style="color: green">
+                  {{ app.loanStatus }}
+                </td>
+                <td *ngIf="app.loanStatus == 'rejected'" style="color: red">
+                  {{ app.loanStatus }}
+                </td>
+                <td
+                  *ngIf="app.loanStatus == 'pending'"
+                  style="color: rgb(76, 43, 226)"
+                >
+                  {{ app.loanStatus }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table *ngIf="userLogin" class="table container table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name user</th>
+                <th scope="col">Mobile Number</th>
+                <th scope="col">Pancard</th>
+                <th scope="col">Loan Amount</th>
+                <th scope="col">Loan Tenure</th>
+                <th scope="col">Loan status</th>
+              </tr>
+            </thead>
+            <tbody class="table-data">
+              <tr *ngFor="let app of currentUser.loanApplication">
+                <td>{{ app.fullName }}</td>
                 <td>{{ app.mobile }}</td>
                 <td>{{ app.pancard }}</td>
                 <td>{{ app.loanAmount }}</td>

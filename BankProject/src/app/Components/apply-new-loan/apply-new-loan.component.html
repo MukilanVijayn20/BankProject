@@ -1,19 +1,19 @@
 <form [formGroup]="loanForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" formControlName="firstName" />
-      <div *ngIf="loanForm.get('firstName')?.invalid && loanForm.get('firstName')?.touched">
-        <span *ngIf="loanForm.get('firstName')?.hasError('required')">First Name is required.</span>
+      <label for="fullName">Full Name:</label>
+      <input type="text" id="fullName" formControlName="fullName" />
+      <div *ngIf="loanForm.get('fullName')?.invalid && loanForm.get('fullName')?.touched">
+        <span *ngIf="loanForm.get('fullName')?.hasError('required')">First Name is required.</span>
       </div>
     </div>
   
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="lastName">Last Name:</label>
       <input type="text" id="lastName" formControlName="lastName" />
       <div *ngIf="loanForm.get('lastName')?.invalid && loanForm.get('lastName')?.touched">
         <span *ngIf="loanForm.get('lastName')?.hasError('required')">Last Name is required.</span>
       </div>
-    </div>
+    </div> -->
   
     <div class="form-group">
       <label for="mobile">Mobile Number:</label>

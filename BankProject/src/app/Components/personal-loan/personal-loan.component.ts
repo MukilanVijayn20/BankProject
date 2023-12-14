@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Employee } from 'src/app/Models/employee.model';
+import { User } from 'src/app/Models/user.model';
 import { DataService } from 'src/app/Services/data.service';
 import { LoanService } from 'src/app/Services/loan.service';
+import { StateService } from 'src/app/Services/state.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-personal-loan',
@@ -19,21 +23,49 @@ export class PersonalLoanComponent implements OnInit {
   b: string = '';
   c: string = '';
   loanApplication: any;
+  currentUser!:User;
+  userLogin:boolean=false;
+  empLogin:boolean=false;
 
   constructor(
     private loanService: LoanService,
     private data: DataService,
-    private router: Router
+    private router: Router,
+    private stateService:StateService,
+    private userService:UserService
   ) {}
 
   ngOnInit() {
-    if (!this.data.loggedIn) {
-      this.router.navigate(['']);
+    const refreshFlag = this.stateService.getRefreshFlag();
+    if(refreshFlag){
+      this.refresh();
     }
+    this.stateService.setRefreshFlag(true);
     this.loanService.getLoan().subscribe((res: any) => {
       this.loanApplication = res;
-      console.log(res);
     });
+    this.userLogin=this.data.userLogin;
+    this.empLogin=this.data.employeeLogin;
+    if(this.data.currentUser){
+      this.currentUser=this.data.currentUser;
+    }
+    
+  }
+
+  refresh(){
+    const uid=sessionStorage.getItem("UserId")
+    if(uid!=null&&uid!="false"){
+      const id=parseInt(uid,10);
+      this.userService.getUserById(id).subscribe((res:any)=>{
+        this.currentUser=res;
+      })
+    }
+    const eid=sessionStorage.getItem("EmployeeId");
+    if(eid!=null&&eid!="false"){
+      this.loanService.getLoan().subscribe((res: any) => {
+        this.loanApplication = res;
+      });
+    }
   }
 
   calculate() {
@@ -63,6 +95,8 @@ export class PersonalLoanComponent implements OnInit {
   }
 
   active(name: string) {
+    this.userLogin=sessionStorage.getItem("userLogin")==="true"
+    this.empLogin=sessionStorage.getItem("employeeLogin")==="true"
     const a = document.querySelector('.act') as HTMLElement;
     const b = document.querySelector('.active') as HTMLElement;
     a.classList.remove('act');

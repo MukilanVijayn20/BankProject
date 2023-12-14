@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from 'src/app/Services/data.service'; 
+import { User } from 'src/app/Models/user.model';
+import { DataService } from 'src/app/Services/data.service';
+import { StateService } from 'src/app/Services/state.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,17 +12,44 @@ import { DataService } from 'src/app/Services/data.service';
 })
 export class DashboardComponent implements OnInit {
   loggedIn: boolean = false;
-  constructor(private data: DataService,private router:Router) {}
+  currentUser!: User;
+  empLogin: boolean = false;
+  userLogin: boolean = false;
+  constructor(
+    private data: DataService,
+    private router: Router,
+    private userService: UserService,
+    private stateService: StateService
+  ) {}
 
   ngOnInit() {
-    if(!this.data.loggedIn){
-      this.router.navigate(['']);
+    this.loggedIn = sessionStorage.getItem('loggedIn') === 'true';
+    if (this.data.currentUser) {
+      this.currentUser = this.data.currentUser;
     }
-    this.loggedIn = this.data.loggedIn;
+    this.empLogin = this.data.employeeLogin;
+    this.userLogin = this.data.userLogin;
+
+    const refreshFlag = this.stateService.getRefreshFlag();
+    if (refreshFlag) {
+      this.refresh();
+    }
+    this.stateService.setRefreshFlag(true);
+  }
+
+  refresh() {
+    this.userLogin = sessionStorage.getItem('userLogin') === 'true';
+    const uid = sessionStorage.getItem('UserId');
+    if (uid != null && uid != 'false') {
+      const id = parseInt(uid, 10);
+      this.userService.getUserById(id).subscribe((res: any) => {
+        this.currentUser = res;
+      });
+    }
   }
 
   logOut() {
-    this.data.currentUser = undefined;
+    // this.data.currentUser = null;
     this.data.loggedIn = false;
     console.log('logout success');
     alert('logged Out Successfully');

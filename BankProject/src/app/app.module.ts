@@ -24,6 +24,9 @@ import { CheckEligibilityComponent } from './Components/check-eligibility/check-
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { SignupComponent } from './Components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { MatCardModule } from '@angular/material/card';
     LearnMoreComponent,
     PersonalLoanComponent,
     CheckEligibilityComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,8 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatFormFieldModule,
     MatCardModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent],

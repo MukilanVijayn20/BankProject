@@ -11,8 +11,5 @@ export class HomeLoanComponent implements OnInit {
   constructor(private data:DataService,private router:Router) {}
 
   ngOnInit() {
-    if(!this.data.loggedIn){
-      this.router.navigate(['']);
-    }
   }
 }

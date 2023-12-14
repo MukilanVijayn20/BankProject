@@ -20,9 +20,6 @@ export class CheckEligibilityComponent implements OnInit {
   constructor(private userService: UserService,private router:Router,private data:DataService) {}
 
   ngOnInit(): void {
-    if(!this.data.loggedIn){
-      this.router.navigate(['']);
-    }
   }
 
   checkEligibility(data: any) {

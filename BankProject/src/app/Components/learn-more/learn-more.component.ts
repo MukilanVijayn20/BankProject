@@ -11,8 +11,5 @@ export class LearnMoreComponent implements OnInit {
   constructor(private router: Router, private data: DataService) {}
 
   ngOnInit(): void {
-    if (!this.data.loggedIn) {
-      this.router.navigate(['']);
-    }
   }
 }

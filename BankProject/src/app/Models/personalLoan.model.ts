@@ -1,7 +1,6 @@
 export class personalLoan {
   id!: number;
-  firstName!: string;
-  lastName!: string;
+  fullName!: string;
   gender!: string;
   dateOfBirth!: string;
   mobile!: number;

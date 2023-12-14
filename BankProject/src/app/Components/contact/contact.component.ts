@@ -15,9 +15,6 @@ export class ContactComponent {
   constructor(private fb: FormBuilder, private http: HttpClient,private data:DataService,private router:Router) {}
 
   ngOnInit() {
-    if(!this.data.loggedIn){
-      this.router.navigate(['']);
-    }
     this.modelForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
