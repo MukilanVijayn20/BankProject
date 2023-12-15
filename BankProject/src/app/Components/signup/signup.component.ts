@@ -19,16 +19,22 @@ import { UserService } from 'src/app/Services/user.service';
 export class SignupComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
-  signupData:User={
+  signupData: User = {
     id: 0,
     email: '',
     password: '',
     fullName: '',
     mobileNumber: '',
-    loanApplication: []
-  }
+    loanApplication: [],
+  };
+  user!: User;
 
-  constructor(private formBuilder: FormBuilder,private userService:UserService,private router:Router,private data:DataService) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router,
+    private data: DataService
+  ) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(
@@ -38,8 +44,8 @@ export class SignupComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.pattern("^((//+91-?)|0)?[0-9]{10}$")
-          ]
+            Validators.pattern('^((//+91-?)|0)?[0-9]{10}$'),
+          ],
         ],
         email: ['', [Validators.required, Validators.email]],
         password: [
@@ -47,14 +53,14 @@ export class SignupComponent implements OnInit {
           [
             Validators.required,
             Validators.minLength(6),
-            Validators.maxLength(40)
-          ]
+            Validators.maxLength(40),
+          ],
         ],
         confirmPassword: ['', Validators.required],
-        acceptTerms: [false, Validators.requiredTrue]
+        acceptTerms: [false, Validators.requiredTrue],
       },
       {
-        validators: [Validation.match('password', 'confirmPassword')]
+        validators: [Validation.match('password', 'confirmPassword')],
       }
     );
   }
@@ -65,30 +71,40 @@ export class SignupComponent implements OnInit {
 
   onSubmit(): void {
     this.submitted = true;
-    this.signupData.email=this.form.value.email;
-    this.signupData.password=this.form.value.password;
-    this.signupData.mobileNumber=this.form.value.mobileNumber;
-    this.signupData.fullName=this.form.value.fullName;
+    this.signupData.email = this.form.value.email;
+    this.signupData.password = this.form.value.password;
+    this.signupData.mobileNumber = this.form.value.mobileNumber;
+    this.signupData.fullName = this.form.value.fullName;
     if (this.form.invalid) {
       return;
-    }
-    else{
-
-      this.userService.getUser().subscribe((res:any)=>{
-        const user=res.find((a:any)=>{
-          return a.email===this.signupData.email 
-        })
-        if(user){
-          alert("Mail Id is already Exist");
-        }else{
-          this.userService.postUser(this.signupData).subscribe((response:any)=>{
-            alert("Added Successfully");
-            this.data.currentUser=this.signupData;
-            this.data.loggedIn=true;
-            this.router.navigate(['/home'])
-          })
+    } else {
+      this.userService.getUser().subscribe((res: any) => {
+        this.user = res.find((a: any) => {
+          return a.email === this.signupData.email;
+        });
+        if (this.user) {
+          alert('Mail Id is already Exist');
+        } else {
+          this.userService
+            .postUser(this.signupData)
+            .subscribe((response: any) => {
+              alert('Added Successfully');
+              this.data.currentUser = this.signupData;
+              this.data.loggedIn = true;
+              this.data.currentUser = this.user;
+              this.data.userLogin = true;
+              this.data.employeeLogin = false;
+              sessionStorage.setItem('loggedIn', 'true');
+              sessionStorage.setItem('userLogin', 'true');
+              sessionStorage.setItem('employeeLogin', 'false');
+              sessionStorage.setItem(
+                'UserId',
+                this.data.currentUser.id.toString()
+              );
+              this.router.navigate(['/home']);
+            });
         }
-      })
+      });
     }
     console.log(JSON.stringify(this.form.value, null, 2));
   }

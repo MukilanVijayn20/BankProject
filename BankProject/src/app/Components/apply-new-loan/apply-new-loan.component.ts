@@ -73,6 +73,7 @@ export class ApplyNewLoanComponent implements OnInit {
     console.log('Submit button clicked');
     const loanApplication = this.loanForm.value;
     if (this.empLogin) {
+      console.log("emp")
       this.loanService.postLoan(loanApplication).subscribe(
         (response) => {
           console.log('Loan application submitted successfully:', response);
@@ -87,6 +88,7 @@ export class ApplyNewLoanComponent implements OnInit {
         }
       );
     }else if(this.userLogin){
+      console.log("user")
       this.userService.addLoanByUser(loanApplication,this.currentUser.id).subscribe((res:any)=>{
         this.showNotification('Loan application submitted successfully');
           this.loanForm.reset();
