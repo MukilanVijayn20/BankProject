@@ -27,7 +27,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { SignupComponent } from './Components/signup/signup.component';
-import { DummyComponent } from './Components/dummy/dummy.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +44,6 @@ import { DummyComponent } from './Components/dummy/dummy.component';
     PersonalLoanComponent,
     CheckEligibilityComponent,
     SignupComponent,
-    DummyComponent,
   ],
   imports: [
     BrowserModule,
