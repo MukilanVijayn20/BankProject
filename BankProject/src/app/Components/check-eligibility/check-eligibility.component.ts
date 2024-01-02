@@ -25,12 +25,12 @@ export class CheckEligibilityComponent implements OnInit {
   checkEligibility(data: any) {
     console.log(this.eligibility);
     this.userService
-      .posteligibility(this.eligibility.panno)
+      .geteligibility(this.eligibility.panno)
       .subscribe((res: LoanEligibility) => {
         if (this.eligibility.phoneno == res.phoneno) {
           if (this.eligibility.age >= 21 && this.eligibility.age <= 65) {
             if (this.eligibility.income >= 10000) {
-              if (res.cibil >= 700 && res.cibil <= 750) {
+              if (res.cibil >= 750 ) {
                 alert(
                   'Credit score of ' + res.cibil + ' eligible for applying loan'
                 );

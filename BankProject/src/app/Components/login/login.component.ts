@@ -19,9 +19,7 @@ import { EmployeeService } from 'src/app/Services/employee.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  pass: string = 'password';
-  eye: string = 'fa fa-eye-slash';
-  eye_icon: boolean = false;
+  
   user: User | undefined;
 
   form!: FormGroup;
@@ -145,17 +143,5 @@ export class LoginComponent implements OnInit {
   onReset(): void {
     this.submitted = false;
     this.form.reset();
-  }
-
-  show() {
-    if (!this.eye_icon) {
-      this.eye = 'fa fa-eye';
-      this.pass = 'text';
-      this.eye_icon = !this.eye_icon;
-    } else {
-      this.eye = 'fa fa-eye-slash';
-      this.pass = 'password';
-      this.eye_icon = !this.eye_icon;
-    }
   }
 }

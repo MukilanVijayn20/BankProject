@@ -20,7 +20,7 @@ export class UserService {
     return this.http.get<User>("http://localhost:8080/user");
   }
   
-  posteligibility(data:string){
+  geteligibility(data:string){
     return this.http.get<LoanEligibility>("http://localhost:8080/eligibility/"+data);
   }
 

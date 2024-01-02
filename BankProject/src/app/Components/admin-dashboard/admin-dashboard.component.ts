@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { personalLoan } from 'src/app/Models/personalLoan.model';
 import { DataService } from 'src/app/Services/data.service';
 import { LoanService } from 'src/app/Services/loan.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -15,7 +16,7 @@ export class AdminDashboardComponent implements OnInit{
   
   loanRequests: personalLoan[]=[];
     loanstatus: any;
-    constructor(private loanService: LoanService, private router: Router,private snackBar: MatSnackBar,private data:DataService) { }
+    constructor(private loanService: LoanService, private router: Router,private snackBar: MatSnackBar,private data:DataService,private userService:UserService) { }
 
     ngOnInit() {
       this.loanService.getLoan().subscribe((res:any)=>{
@@ -23,6 +24,11 @@ export class AdminDashboardComponent implements OnInit{
         console.log(this.loanRequests)
         this.loanRequests=this.loanRequests.filter((a:any)=>{
           return a.loanStatus=='pending';
+        })
+        this.loanRequests.forEach((a:any)=>{
+          a.cibil=this.userService.geteligibility(a.pancard).subscribe((r:any)=>{
+            a.cibil=r.cibil;
+          })
         })
       })
     }
@@ -52,5 +58,14 @@ export class AdminDashboardComponent implements OnInit{
         });
       })
     }
+
+    // grtCibilScore(panno:string){
+    //   console.log("grtCibilScore "+panno)
+    //   this.userService.geteligibility(panno).subscribe((res:any)=>{
+    //     return res.panno;
+    //   },err=>{
+    //     return null;
+    //   })
+    // }
    
   }

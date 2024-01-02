@@ -88,6 +88,7 @@ export class SignupComponent implements OnInit {
           this.userService
             .postUser(this.signupData)
             .subscribe((response: any) => {
+              // this.form.reset();
               alert('Added Successfully');
               this.data.currentUser = this.signupData;
               this.data.loggedIn = true;
@@ -97,11 +98,11 @@ export class SignupComponent implements OnInit {
               sessionStorage.setItem('loggedIn', 'true');
               sessionStorage.setItem('userLogin', 'true');
               sessionStorage.setItem('employeeLogin', 'false');
-              sessionStorage.setItem(
-                'UserId',
-                this.data.currentUser.id.toString()
-              );
-              this.router.navigate(['/home']);
+              // sessionStorage.setItem(
+              //   'UserId',
+              //   this.data.currentUser.id.toString()
+              // );
+              this.router.navigate(['/login']);
             });
         }
       });

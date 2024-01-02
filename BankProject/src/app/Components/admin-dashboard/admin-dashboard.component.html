@@ -13,6 +13,7 @@
         <th scope="col">Pancard</th>
         <th scope="col">Loan Amount</th>
         <th scope="col">Loan Tenure</th>
+        <th scope="col">Cibil Score</th>
         <th scope="col">Monthly Income</th>
         <th scope="col">Action</th>
       </tr>
@@ -24,6 +25,7 @@
         <td>{{loan.pancard}}</td>
         <td>{{loan.loanAmount}}</td>
         <td>{{loan.loanTenure}}</td>
+        <td>{{loan.cibil}}</td>
         <td>{{loan.monthlyIncome}}</td>
         <td>
           <button class="btn btn-success" style="margin-right: 20px;" (click)="aprove(loan.id)">Approve</button>

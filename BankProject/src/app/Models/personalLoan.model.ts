@@ -12,4 +12,5 @@ export class personalLoan {
   loanTenure!: number;
   monthlyIncome!: number;
   loanStatus!: string;
+  cibil!:number;
 }
